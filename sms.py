@@ -3,9 +3,10 @@
 
 import serial
 import time
+import sys
 
 class TextMessage:
-    def __init__(self, recipient="01234562313", message="TextMessage.content not set."):
+    def __init__(self, recipient="01234562313", message="TextMessage content not set."):
         self.recipient = recipient
         self.content = message
 
@@ -35,9 +36,9 @@ class TextMessage:
     def disconnectPhone(self):
         self.ser.close()
 
-print "test"
-sms= TextMessage("043423422","test")
-sms.connectPhone()
-sms.sendMessage()
-sms.disconnectPhone()
-print "einde"
+if __name__ == '__main__':
+    print "usage: python sms.py <number> <message>"
+    print sys.argv[1]
+    print sys.argv[2]
+    sms=TextMessage(number,message)
+    print "message sent"
