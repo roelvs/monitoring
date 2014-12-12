@@ -1,3 +1,6 @@
+#warning: do not forget to install pyserial. (pip install pyserial)
+#this code is based on various sources on the internet. 
+
 import serial
 import time
 
@@ -33,7 +36,7 @@ class TextMessage:
         self.ser.close()
 
 print "test"
-sms= TextMessage("0498824687","test")
+sms= TextMessage("043423422","test")
 sms.connectPhone()
 sms.sendMessage()
 sms.disconnectPhone()
